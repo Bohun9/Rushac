@@ -12,7 +12,6 @@ def get_problems():
 
     with http.server.HTTPServer(("127.0.0.1", 10043), CompanionRequestHandler) as server:
         server.handle_request()
-
         num_batch = problems[0]["batch"]["size"]
         for _ in range(num_batch - 1):
             server.handle_request()
